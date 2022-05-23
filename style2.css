@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: white;
+}
+.sidebar {
+	background-color: #1b1b1b;
+	position: fixed;
+	width: 250px;
+	height: 100%;
+}
+.logo {
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	text-align: center;
+	line-height: 60px;
+	text-transform: capitalize;
+}
+nav ul {
+	list-style: none;
+	background-color: #1b1b1b;
+	height: 100%;
+	width: 100%;
+}
+
+nav ul li {
+	line-height: 60px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding-left: 40px;
+	text-transform: capitalize;
+	display: block;
+	width: 100%;
+	border-left: 3px solid transparent;
+	/* transition: 0.5s ease; */
+}
+nav ul li a:hover {
+	color: rgb(202, 219, 106);
+	/* box-shadow: 0 0 5px #bbf065, 0 0 5px #c8e252; */
+	background-color: #1e1e1e;
+	border-left-color: rgb(202, 219, 106);
+}
+nav ul ul {
+	position: static;
+	display: none;
+	transition: 0.5s ease;
+}
+.show {
+	display: block;
+	transition: 0.5s ease;
+}
+nav ul ul li {
+	line-height: 40px;
+	border-bottom: none;
+}
+nav ul ul li a {
+	font-size: 16px;
+	padding-left: 30%;
+}
+nav ul ul ul li a {
+	font-size: 16px;
+	padding-left: 40%;
+}
