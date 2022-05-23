@@ -1,46 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="./style.css" />
-		<!-- css file -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet" />
-		<title>Navbar</title>
+		<title>Sidebar menu With Sub-menus | Using HTML, CSS & JQuery</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 	</head>
 	<body>
-		<nav class="navbar">
-			<div class="logo">logo</div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li>
-					<a href="#">Features</a>
-					<ul>
-						<li><a href="#">page</a></li>
-						<li><a href="#">element</a></li>
-						<li><a href="#">icon</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Services</a>
-					<ul>
-						<li><a href="#">Page1</a></li>
-						<li><a href="#">Page2</a></li>
-						<li>
-							<a href="#">More</a>
-							<ul>
-								<li><a href="#">SubPage 1</a></li>
-								<li><a href="#">SubPage 2</a></li>
-								<li><a href="#">SubPage 3</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
+		<div class="menu-btn">
+			<i class="fas fa-bars"></i>
+		</div>
+		<div class="side-bar">
+			<div class="close-btn">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="menu">
+				<div class="item">
+					<a href="#"><i class="fas fa-desktop"></i>Dashboard</a>
+				</div>
+				<div class="item">
+					<a class="sub-btn"><i class="fas fa-table"></i>Tools<i class="fas fa-angle-right dropdown"></i></a>
+					<div class="sub-menu">
+						<a href="#" class="sub-item">Change Password</a>
+						<a href="#" class="sub-item">User Allocation</a>
+						<a href="#" class="sub-item">User Creation</a>
+						<a href="#" class="sub-item">Settings</a>
+					</div>
+				</div>
+				<div class="item">
+					<a class="sub-btn"><i class="fas fa-cogs"></i>Master<i class="fas fa-angle-right dropdown"></i></a>
+					<div class="sub-menu">
+						<a href="#" class="sub-item">Doctor Master</a>
+						<a href="#" class="sub-item">Emp Master</a>
+						<a href="#" class="sub-item">Por/Hospitol</a>
+						<a href="#" class="sub-item">Service info</a>
+						<a href="#" class="sub-item">Ward info</a>
+						<a href="#" class="sub-item">Department info</a>
+						<a href="#" class="sub-item">Area Master</a>
+						<a href="#" class="sub-item">Title master</a>
+						<!-- <a href="#" class="sub-item">Doctor Master</a> -->
+						<!-- <a href="#" class="sub-item">EMploye Master</a> -->
+					</div>
+					<div class="item">
+						<a class="sub-btn"><i class="fas fa-cogs"></i>Registration<i class="fas fa-angle-right dropdown"></i></a>
+						<div class="sub-menu">
+							<a href="#" class="sub-item">Patient Registration</a>
+							<a href="#" class="sub-item">OPD Registration</a>
+							<a href="#" class="sub-item">IPD Registration</a>
+						</div>
+				</div>
+					<div class="item">
+						<a class="sub-btn"><i class="fas fa-cogs"></i>Day WOrk Out<i class="fas fa-angle-right dropdown"></i></a>
+						<div class="sub-menu">
+							<a href="#" class="sub-item">Doctor Allocation</a>
+							<a href="#" class="sub-item">Shift Allotment</a>
+						</div>
+				</div>
+				<div class="item">
+					<a href="#"><i class="fas fa-info-circle"></i>Report</a>
+				</div>
+			</div>
+			<div class="item">
+				<a href="#"><i class="fas fa-th"></i>Transaction</a>
+			</div>
+		</div>
+		<!-- <section class="main">
+			<h1>Sidebar Menu With<br />Sub-Menus</h1>
+		</section> -->
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				//jquery for toggle sub menus
+				$('.sub-btn').click(function () {
+					$(this).next('.sub-menu').slideToggle();
+					$(this).find('.dropdown').toggleClass('rotate');
+				});
+
+				//jquery for expand and collapse the sidebar
+				$('.menu-btn').click(function () {
+					$('.side-bar').addClass('active');
+					$('.menu-btn').css('visibility', 'hidden');
+				});
+
+				$('.close-btn').click(function () {
+					$('.side-bar').removeClass('active');
+					$('.menu-btn').css('visibility', 'visible');
+				});
+			});
+		</script>
 	</body>
 </html>

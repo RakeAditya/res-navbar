@@ -9,6 +9,7 @@
 	position: fixed;
 	width: 250px;
 	height: 100%;
+	/* display: none; */
 }
 .logo {
 	font-size: 30px;
@@ -46,6 +47,7 @@ nav ul li a:hover {
 	/* box-shadow: 0 0 5px #bbf065, 0 0 5px #c8e252; */
 	background-color: #1e1e1e;
 	border-left-color: rgb(202, 219, 106);
+	transition: 0.3s ease;
 }
 nav ul ul {
 	position: static;
