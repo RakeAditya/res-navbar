@@ -72,6 +72,8 @@
 
 		<script type="text/javascript">
 			$(document).ready(function () {
+				const width = document.documentElement.clientWidth
+				console.log(width)
 				//jquery for toggle sub menus
 				$('.sub-btn').click(function () {
 					$(this).next('.sub-menu').slideToggle();
@@ -80,13 +82,23 @@
 
 				//jquery for expand and collapse the sidebar
 				$('.menu-btn').click(function () {
-					$('.side-bar').addClass('active');
-					$('.menu-btn').css('visibility', 'hidden');
+					if (width <= 768) {
+						$('.side-bar').addClass('active');
+						$('.menu-btn').css('visibility', 'hidden');
+					} else {
+						$('.side-bar').removeClass('active');
+						$('.menu-btn').css('visibility', 'hidden');
+					}
 				});
 
 				$('.close-btn').click(function () {
-					$('.side-bar').removeClass('active');
-					$('.menu-btn').css('visibility', 'visible');
+					if (width <= 768){
+						$('.side-bar').removeClass('active');
+						$('.menu-btn').css('visibility', 'visible');
+					} else {
+						$('.side-bar').addClass('active');
+						$('.menu-btn').css('visibility', 'visible');
+					}
 				});
 			});
 		</script>

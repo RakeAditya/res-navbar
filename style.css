@@ -19,14 +19,14 @@ body {
 	height: 100vh;
 	position: fixed;
 	top: 0;
-	left: -100%;
+	left: 0;
 	overflow-y: auto;
 	transition: 0.6s ease;
 	transition-property: left;
 }
 
 .side-bar.active {
-	left: 0;
+	left: -100%;
 }
 
 .side-bar .menu {
@@ -109,9 +109,15 @@ body {
 	line-height: 80px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 768px) {
 	.main h1 {
 		font-size: 40px;
 		line-height: 60px;
+	}
+	.side-bar {
+		left: -100%;
+	}
+	.side-bar.active {
+		left: 0;
 	}
 }
